@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="GetACar">
+  <ClassDiagramComponents>
+    <Class name="Technology" package="getacar" visibility="public" xPosition="404.0" yPosition="690.0">
+      <Fields>
+        <Field name="internet" type="boolean" visibility="public"/>
+        <Field name="tv" type="boolean" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Car" package="getacar" visibility="public" xPosition="32.0" yPosition="505.0">
+      <Fields>
+        <Field name="type" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="brand"/>
+          <Argument type="String" name="model"/>
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="topSpeed"/>
+          <Argument type="int" name="year"/>
+          <Argument type="int" name="kilometres"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="isRented"/>
+          <Argument type="String" name="type"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="licensePlate" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehicle" package="getacar" visibility="public" isAbstract="true" xPosition="96.0" yPosition="50.0">
+      <Fields>
+        <Field name="brand" type="String" visibility="protected"/>
+        <Field name="model" type="String" visibility="protected"/>
+        <Field name="color" type="String" visibility="protected"/>
+        <Field name="topSpeed" type="int" visibility="protected"/>
+        <Field name="year" type="int" visibility="protected"/>
+        <Field name="kilometres" type="int" visibility="protected"/>
+        <Field name="price" type="double" visibility="protected"/>
+        <Field name="isRented" type="boolean" visibility="protected"/>
+        <Field name="numOfVehicles" type="int" visibility="protected" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="brand"/>
+          <Argument type="String" name="model"/>
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="topSpeed"/>
+          <Argument type="int" name="year"/>
+          <Argument type="int" name="kilometres"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="isRented"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="licensePlate" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="getVehicleNum" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Bus" package="getacar" visibility="public" xPosition="335.0" yPosition="505.0">
+      <Fields>
+        <Field name="capacity" type="int" visibility="public"/>
+        <Field name="tech" type="Technology" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="brand"/>
+          <Argument type="String" name="model"/>
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="topSpeed"/>
+          <Argument type="int" name="year"/>
+          <Argument type="int" name="kilometres"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="isRented"/>
+          <Argument type="int" name="capacity"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="licensePlate" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Motorcycle" package="getacar" visibility="public" xPosition="631.0" yPosition="505.0">
+      <Fields>
+        <Field name="cylinderNum" type="int" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="brand"/>
+          <Argument type="String" name="model"/>
+          <Argument type="String" name="color"/>
+          <Argument type="int" name="topSpeed"/>
+          <Argument type="int" name="year"/>
+          <Argument type="int" name="kilometres"/>
+          <Argument type="double" name="price"/>
+          <Argument type="boolean" name="isRented"/>
+          <Argument type="int" name="cylinderNum"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="licensePlate" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="getacar.Motorcycle" target="getacar.Vehicle"/>
+    <IsRelation name="is" source="getacar.Car" target="getacar.Vehicle"/>
+    <IsRelation name="is" source="getacar.Bus" target="getacar.Vehicle"/>
+    <HasRelation name="tech" source="getacar.Bus" target="getacar.Technology" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
